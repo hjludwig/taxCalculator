@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
+    <script src="script.js"></script>
     <body>
-    <form>
-        <label>Taxrate</label>
-        <input id="taxrate"></input>
-        <label>Item Price</label>
-        <input id="price"></input>
-    </form>
-    <button onclick="calculate()">Calculate</button>
-    <h2>Price after tax</h2>
-    <p id="answer"></p>
+        <form>
+            <h2>Calculate Cost after taxes</h2>
+            <label>Taxrate</label>
+            <input id="taxrate1"></input>
+            <label>Item Price</label>
+            <input id="price"></input>
+            <button type="button" onclick="calculateTotal()">Calculate</button>
+        </form>
+        <p>Cost after tax:</p>
+        <p id="afterTax"></p>
+        <form>
+            <h2>Calculate Tax Paid</h2>
+            <label>Taxrate</label>
+            <input id="taxrate2"></input>
+            <label>Total Paid</label>
+            <input id="paid"></input>
+            <button type="button" onclick="calculateTax()">Calculate</button>
+        </form>
+        <p>Item price: <span id="itemPrice"></span></p>
+        <p id="itemPrice"></p>
+        <p>Tax Paid:</p>
+        <p id="taxPaid"></p>   
     </body>
+    
 </html>
-<script src="script.js"></script>   
