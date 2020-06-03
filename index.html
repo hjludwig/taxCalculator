@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <script src="script.js"></script>
+    <head>
+        <script src="script.js" async></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
     <body>
-        <form>
+        <h1>My Tax Calculator</h1>
+            <form id="tax-rate">
+                <h2 id="thing">Current Tax Rate</h2>
+                <p class="tax-rate">Tax Rate: </p>
+                <button type="button">Change Tax Rate</button>
+                <input name="tax-rate"/>
+                <button type="button" onclick="updateTaxRate()">Update</button>
+            </form>
+        <form id="after-tax">
             <h2>Calculate Cost after taxes</h2>
             <label>Taxrate</label>
             <input id="taxrate1"></input>
             <label>Item Price</label>
             <input id="price"></input>
             <button type="button" onclick="calculateTotal()">Calculate</button>
-        </form>
-        <p>Cost after tax:</p>
-        <p id="afterTax"></p>
-        <form>
+            <div class="answer"><p>Cost after tax: <span></span></p></div>
+    </form>
+
+        <form id="tax-paid">
             <h2>Calculate Tax Paid</h2>
             <label>Taxrate</label>
             <input id="taxrate2"></input>
             <label>Total Paid</label>
             <input id="paid"></input>
             <button type="button" onclick="calculateTax()">Calculate</button>
+            <p>Item price: <span></span></p>
+            <p>Tax Paid: <span></span></p>
+            
         </form>
-        <p>Item price: <span id="itemPrice"></span></p>
-        <p id="itemPrice"></p>
-        <p>Tax Paid:</p>
-        <p id="taxPaid"></p>   
     </body>
     
 </html>

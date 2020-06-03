@@ -1,18 +1,29 @@
+
+// Default Tax Rate
+let taxRate = 13;
+// let myVar = document.querySelector("#tax-rate input[name='tax-rate]'").innerHTML;
+console.log(taxRate);
+
+function updateTaxRate() {
+    // taxRate = parseFloat(document.querySelector("#tax-rate input[name='tax-rate']"));
+    taxRate = parseFloat(document.querySelector("#tax-rate input[name='tax-rate']").value);
+    document.querySelector("#tax-rate .tax-rate").insertAdjacentText("beforeend", taxRate);
+}
 function calculateTotal() {
-    var taxrate = parseFloat(document.getElementById("taxrate1").value);
-    var price = parseFloat(document.getElementById("price").value);
+    // var taxrate = parseFloat(document.querySelector("#taxrate1").value);
+    var price = parseFloat(document.querySelector("price").value);
     var total = price + taxrate / 100 * price;
-    document.getElementById("afterTax").textContent = total.toFixed(2);
+    document.querySelector("afterTax").textContent = total.toFixed(2);
   }
 function calculateTax() {
-    var taxrate = parseFloat(document.getElementById("taxrate2").value);
-    var paid = parseFloat(document.getElementById("paid").value);
+    // var taxrate = parseFloat(document.querySelector("taxrate2").value);
+    var paid = parseFloat(document.querySelector("paid").value);
     var price = paid / (taxrate/100 + 1) ;
     var taxPaid = paid - price;
-    document.getElementById("itemPrice").textContent = price.toFixed(2);
-    document.getElementById("taxPaid").textContent = taxPaid.toFixed(2);
+    document.querySelector("itemPrice").textContent = price.toFixed(2);
+    document.querySelector("taxPaid").textContent = taxPaid.toFixed(2);
 }
 function testFunction() {
     console.log("Test Complete");
-    document.getElementById("taxPaid").textContent = "Test Complete";
+    document.querySelector("taxPaid").textContent = "Test Complete";
 }
