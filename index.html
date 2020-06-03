@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <script src="script.js" async></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <h1>My Tax Calculator</h1>
-            <form id="tax-rate">
-                <h2 id="thing">Current Tax Rate</h2>
-                <p class="tax-rate">Tax Rate: </p>
-                <button type="button">Change Tax Rate</button>
-                <input name="tax-rate"/>
-                <button type="button" onclick="updateTaxRate()">Update</button>
-            </form>
-        <form id="after-tax">
-            <h2>Calculate Cost after taxes</h2>
-            <label>Taxrate</label>
-            <input id="taxrate1"></input>
-            <label>Item Price</label>
-            <input id="price"></input>
-            <button type="button" onclick="calculateTotal()">Calculate</button>
-            <div class="answer"><p>Cost after tax: <span></span></p></div>
-    </form>
+<html lang="en">
 
-        <form id="tax-paid">
-            <h2>Calculate Tax Paid</h2>
-            <label>Taxrate</label>
-            <input id="taxrate2"></input>
-            <label>Total Paid</label>
-            <input id="paid"></input>
-            <button type="button" onclick="calculateTax()">Calculate</button>
-            <p>Item price: <span></span></p>
-            <p>Tax Paid: <span></span></p>
-            
-        </form>
-    </body>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" async></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>My Tax Calculator</title>
+</head>
+
+<body>
+    <h1>My Tax Calculator</h1>
+    <form id="tax-rate">
+        <h2>Current Tax Rate</h2>
+        <p class="tax-rate">Tax Rate: <span class="rate"></span></p>
+        <input type="button" name="change-rate" value="Change Tax Rate">
+        <div class="update hidden">
+            <input type="tel" name="tax-rate">
+            <input type="button" name="update-button" value="Update"> 
+        </div>
+
+    </form>
+    <form id="after-tax">
+        <h2>Calculate Cost after taxes</h2>
+        <label>Item Price</label>
+        <input type="tel" name="price">
+        <input type="button" name="calculate" value="Calculate">
+        <div class="answer">
+            <p>Cost after tax: <span class="result"></span></p>
+        </div>
+    </form>
+    <form id="tax-paid">
+        <h2>Calculate Tax Paid</h2>
+        <label>Total Paid</label>
+        <input name="total-paid">
+        <input type="button" name="calculate" value="Calculate">
+        <div class="answer">
+            <p class="price">Item price: <span class="result"></span></p>
+            <p class="tax">Tax Paid: <span class="result"></span></p>
+        </div>
+
+    </form>
+</body>
+
 </html>
