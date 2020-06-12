@@ -16,6 +16,7 @@ document.querySelector(".rate").textContent = taxRate;
 function updateTaxRate() {
     taxRate = parseFloat(document.querySelector("#tax-rate input[name='tax-rate']").value);
     document.querySelector("#tax-rate .tax-rate span").textContent = taxRate;
+    document.querySelector(".update").classList.toggle("hidden");
 }
 function showChangeDiv() {
     document.querySelector(".update").classList.toggle("hidden");
@@ -24,6 +25,7 @@ function calculateTotal() {
     var price = parseFloat(document.querySelector("input[name='price']").value);
     var total = price + taxRate / 100 * price;
     document.querySelector("#after-tax .result").textContent = total.toFixed(2);
+    price.value = "";
 }
 function calculateTax() {
     var paid = parseFloat(document.querySelector("#tax-paid input[name='total-paid']").value);
@@ -31,6 +33,8 @@ function calculateTax() {
     var taxPaid = paid - price;
     document.querySelector("#tax-paid .price .result").textContent = price.toFixed(2);
     document.querySelector("#tax-paid .tax .result").textContent = taxPaid.toFixed(2);
+    price.value = "";
+    paid.value = "";
 }
 
 

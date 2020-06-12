@@ -22,6 +22,36 @@ body {
 #calculator {
     background: rgb(240, 240, 240);
 }
+#tax-rate {
+    // display: flex;
+    h2, p {
+        display: inline-block;
+    }
+    input[type=button] {
+        display: block;
+    }
+    .tax-rate {
+        width: 5rem;
+        height: 5rem;
+        background-color: $primaryColor;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        border-radius: 2.5rem;
+        &::after {
+            content: "%";
+        }
+        margin-left: 5rem;
+    }
+    .update {
+        input[type=button] {
+            display: inline;
+        }
+        margin-top: 2rem;
+    }
+}
 h1 {
     text-align: center;
     font-weight: 300;
@@ -51,6 +81,7 @@ input[type=button] {
     background: none;
     color: $primaryColor;
     border: 1px solid;
+    transition: all 0.3s ease;
     &:hover, &:focus, &:active {
         background: $primaryColor;
         color: white;
